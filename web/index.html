@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UPTOBEAR</title>
+  <meta name="description" content="In October, every bear is a bull. $UPTOBEAR: hibernate, vote, feed the top 3 every day, claim the basket on waking.">
+  <meta property="og:title" content="UPTOBEAR">
+  <meta property="og:description" content="In October, every bear is a bull.">
+  <meta property="og:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <meta property="og:url" content="https://uptobear.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <link rel="icon" href="./assets/gen/09-avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/site.css?v=20261001a">
+</head>
+<body>
+  <a class="skip" href="#story">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./index.html" aria-current="page">
+        <span class="avatar"><img src="./assets/gen/09-avatar.png" alt="" onerror="this.src='./assets/bear/bear_96_orange.png';this.onerror=null"></span>
+        <span>UPTOBEAR</span>
+      </a>
+      <nav aria-label="Pages">
+        <a href="#race" data-short="Vote"><span>Vote</span></a>
+        <a href="./stake.html">Stake</a>
+        <a href="./feedings.html">Buys</a>
+        <a href="./wake.html">Unlock</a>
+      </nav>
+    </div>
+  </header>
+  <div class="wrap warn-wrap" id="stale-slot"></div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap grid">
+        <div class="copy">
+          <h1>In October, every bear is a bull.</h1>
+          <p class="lead">Pick a token every day.<br>Our treasury buys the winners.</p>
+          <div class="cta">
+            <a class="btn" data-buy hidden>Buy $UPTOBEAR</a>
+            <a class="btn" href="./stake.html">Stake $UPTOBEAR</a>
+            <a class="btn ghost" href="#race">Today's bulls</a>
+          </div>
+          <p class="error" id="err" hidden></p>
+          <div class="closes" aria-label="The day closes in">
+            <span class="eyebrow">the day closes in</span>
+            <div class="clock" id="closes-in" aria-live="off">--:--:--</div>
+            <p class="note">00:00 UTC, every day.<span class="badge" id="sample-badge" hidden>sample data</span></p>
+          </div>
+        </div>
+        <div class="bear">
+          <img src="./assets/gen/02-hero-bear.png" alt="The UPTOBEAR bear, thumbs up, wearing bull horns" data-moo onerror="this.remove()">
+        </div>
+      </div>
+    </section>
+    <section class="band race" id="race" aria-label="The race">
+      <div class="wrap">
+        <div class="board race-board reveal">
+          <div class="board-head">
+            <div class="title">
+              <span class="eyebrow">the race</span>
+              <h2>Today's race</h2>
+              <p>Vote for any token. At 00:00 UTC the treasury buys the top 3.<br>Bought tokens are staked until Nov 1.</p>
+            </div>
+            <div class="stats">
+              <div class="stat"><span class="eyebrow">on the table today</span><div class="num" id="race-pot">—</div><span class="sub">buys the top 3 · 50 / 30 / 20</span></div>
+              <div class="stat"><span class="eyebrow">closes in</span><div class="clock small" id="race-closes" aria-live="off">--:--:--</div><span class="sub">00:00 UTC, every day</span></div>
+            </div>
+          </div>
+          <ol class="table" id="race-table">
+            <li class="trow top skel"></li><li class="trow top skel"></li><li class="trow top skel"></li>
+            <li class="cut" role="separator"><span>the cut · top 3 get bought</span></li>
+            <li class="trow skel"></li><li class="trow skel"></li><li class="trow skel"></li><li class="trow skel"></li>
+          </ol>
+          <p class="cta-row">Your token is not here? <a class="btn small" href="./stake.html#vote-card">Vote for any token</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band tight" aria-label="Stickers">
+      <div class="rail" role="list">
+        <div class="rail-track"></div>
+      </div>
+    </section>
+    <div class="wave to-cream"></div>
+
+    <section class="band cream" id="story">
+      <div class="wrap story reveal">
+        <div class="scene" data-scene="03-hibernate"><div class="art"></div></div>
+        <div class="txt">
+          <span class="eyebrow">hibernate</span>
+          <h2>Bears sleep. Bulls wake up.</h2>
+          <p>Locked until Nov 1. No early exit. No admin.</p>
+          <div class="num big"><span id="hib-pct">—</span></div>
+          <p class="note">of supply hibernating · <span id="hib-count">—</span> hibernators</p>
+          <a class="btn" href="./stake.html">Stake $UPTOBEAR</a>
+        </div>
+      </div>
+    </section>
+    <div class="wave to-orange"></div>
+
+    <section class="band" id="bulls-section">
+      <div class="wrap story flip reveal">
+        <div class="scene" data-scene="04-vote"><div class="art"></div></div>
+        <div class="txt">
+          <span class="eyebrow">vote</span>
+          <h2>Pick a token.</h2>
+          <p>Any token. Change your vote any time.</p>
+          <p class="note">Vote from the race. Change your mind any time before 00:00 UTC.</p>
+          <a class="btn" href="#race">Vote now</a>
+        </div>
+      </div>
+    </section>
+    <div class="wave to-cream"></div>
+
+    <section class="band cream">
+      <div class="wrap story reveal">
+        <div class="scene" data-scene="05-feeding"><div class="art"></div></div>
+        <div class="txt">
+          <span class="eyebrow">feeding</span>
+          <h2>Three jars, every day.</h2>
+          <p>Every day the treasury's ETH buys the top 3: 50/30/20.<br>The operator buys by hand. Every transaction is public.</p>
+          <div class="jars" id="jars"></div>
+          <p class="note" style="margin-top:14px">releasable in the treasury: <strong id="releasable">—</strong> · <span id="last-feeding"></span></p>
+          <a class="btn" href="./feedings.html">Past feedings</a>
+        </div>
+      </div>
+    </section>
+    <div class="wave to-orange"></div>
+
+    <section class="band">
+      <div class="wrap story flip reveal">
+        <div class="scene" data-scene="06-waking"><div class="art"></div></div>
+        <div class="txt">
+          <span class="eyebrow">waking</span>
+          <h2>Nov 1. Hibernators get the basket.</h2>
+          <p>Nov 1: the basket is split by weight. Claim each token yourself.</p>
+          <div class="clock" id="wake-in" style="margin:14px 0 6px">--:--:--</div>
+          <p class="note">2026-11-01 00:00 UTC.</p>
+          <a class="btn" href="./wake.html">See the unlock</a>
+        </div>
+      </div>
+    </section>
+    <div class="wave to-cream"></div>
+  </main>
+
+  <footer class="fine"></footer>
+
+
+  <!-- vote sheet: vote from the race without leaving the page -->
+  <div class="sheet-backdrop" id="vote-sheet" hidden>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="vs-title">
+      <button class="close" id="vs-close" type="button" aria-label="Close">×</button>
+      <h3 id="vs-title">Vote</h3>
+      <div class="vs-token" id="vs-token" hidden>
+        <span id="vs-logo"></span>
+        <div class="who"><div class="vs-name" id="vs-name">—</div><div class="vs-addr mono" id="vs-addr"></div></div>
+      </div>
+      <div id="vs-any" hidden>
+        <label for="vs-input">Token address</label>
+        <input id="vs-input" type="text" placeholder="0x…" autocomplete="off" spellcheck="false">
+        <div class="note" id="vs-sym"></div>
+      </div>
+      <p class="note" id="vs-line">Connect a wallet to vote.</p>
+      <div class="row"><span class="k">Wallet</span><span class="v" id="wallet-line">not connected</span></div>
+      <div class="actions">
+        <button id="connect" type="button">Connect wallet</button>
+        <button id="switch" type="button" class="secondary" hidden>Switch to Robinhood Chain</button>
+      </div>
+      <p class="error" id="wallet-err" hidden></p>
+      <div id="vs-stake" hidden>
+        <p class="note">You need staked $UPTOBEAR to vote. Stake first, then vote.</p>
+        <label for="vs-amount">Amount of $UPTOBEAR</label>
+        <input id="vs-amount" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
+        <div class="note" id="vs-allowance"></div>
+        <p class="note" id="vs-buy-line" hidden>No $UPTOBEAR in this wallet. <a class="btn small" data-buy hidden>Buy $UPTOBEAR</a></p>
+        <label class="inline"><input type="checkbox" id="vs-ack"> No early exit until Nov 1 2026. I know.</label>
+        <div class="actions">
+          <button id="vs-approve" type="button" class="secondary">Approve</button>
+          <button id="vs-deposit" type="button">Stake $UPTOBEAR</button>
+        </div>
+        <div class="status" id="vs-stake-status"></div>
+        <p class="error" id="vs-stake-err" hidden></p>
+      </div>
+      <div class="actions"><button id="vs-vote" type="button" hidden>Vote</button></div>
+      <div class="status" id="vs-status"></div>
+      <p class="error" id="vs-err" hidden></p>
+      <p class="note small">Weight = amount × days left.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js" integrity="sha512-V3xRGsQMQ8CG4l2gVN44TCDmNY5cdlxbSvejrgmWxcLKHft0Q3XQDbeuJ9aot14mpNuRWGtI//WKraedDGNZ+g==" crossorigin="anonymous"></script>
+  <script src="./config.js?v=20261001a"></script>
+  <script src="./abi.js?v=20261001a"></script>
+  <script src="./js/common.js?v=20261001a"></script>
+  <script src="./js/wallet.js?v=20261001a"></script>
+  <script src="./js/motion.js?v=20261001a"></script>
+  <script src="./js/index.js?v=20261001a"></script>
+</body>
+</html>

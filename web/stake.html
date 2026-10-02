@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stake</title>
+  <meta name="description" content="Stake $UPTOBEAR: lock it until Nov 1, vote for any token, see your share of the basket.">
+  <meta property="og:title" content="UPTOBEAR — stake">
+  <meta property="og:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <meta property="og:url" content="https://uptobear.com/stake.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <link rel="icon" href="./assets/gen/09-avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/site.css?v=20261001a">
+</head>
+<body>
+  <a class="skip" href="#sleep">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./index.html">
+        <span class="avatar"><img src="./assets/gen/09-avatar.png" alt="" onerror="this.src='./assets/bear/bear_96_orange.png';this.onerror=null"></span>
+        <span>UPTOBEAR</span>
+      </a>
+      <nav aria-label="Pages">
+        <a href="./index.html#race" data-short="Vote"><span>Vote</span></a>
+        <a href="./stake.html" aria-current="page">Stake</a>
+        <a href="./feedings.html">Buys</a>
+        <a href="./wake.html">Unlock</a>
+      </nav>
+    </div>
+  </header>
+  <div class="wrap warn-wrap" id="stale-slot"></div>
+
+  <main>
+    <section class="band tight">
+      <div class="wrap page-head stake">
+        <div class="stake-col">
+          <h1>Stake $UPTOBEAR.</h1>
+          <p class="lead">Locked until Nov 1 2026, 00:00 UTC.</p>
+          <p class="note buy-note"><span>Don't have $UPTOBEAR yet?</span> <a class="btn small" data-buy hidden>Buy $UPTOBEAR</a></p>
+          <p class="error" id="err" hidden></p>
+        <div class="card">
+          <div class="row"><span class="k">Wallet</span><span class="v" id="wallet-line">not connected</span></div>
+          <div class="actions">
+            <button id="connect" type="button">Connect wallet</button>
+            <button id="switch" type="button" class="secondary" hidden>Switch to Robinhood Chain</button>
+          </div>
+          <p class="note" id="connect-hint">Connect to see your balance, stake and vote.</p>
+          <p class="error" id="wallet-err" hidden></p>
+        </div>
+
+        <div class="card" id="deposit-card">
+          <label for="amount">Amount of $UPTOBEAR</label>
+          <input id="amount" type="text" inputmode="decimal" placeholder="0.0" autocomplete="off">
+          <div class="note" id="allowance-line"></div>
+          <fieldset>
+            <legend>Approve</legend>
+            <label class="inline"><input type="radio" name="approve-mode" value="exact" checked> exact amount</label>
+            <label class="inline"><input type="radio" name="approve-mode" value="max"> max</label>
+          </fieldset>
+          <label class="inline"><input type="checkbox" id="ack"> No early exit until Nov 1 2026. I know.</label>
+          <div class="actions">
+            <button id="approve" type="button" class="secondary">Approve</button>
+            <button id="deposit" type="button">Stake $UPTOBEAR</button>
+          </div>
+          <div class="status" id="deposit-status"></div>
+          <p class="error" id="deposit-err" hidden></p>
+          <div class="sleeping" id="sleeping" hidden>
+            <img src="./assets/gen/10c-sleep.png" alt="" data-moo onerror="this.remove()">
+            <p class="note">Asleep until Nov 1 2026 00:00 UTC.</p>
+          </div>
+          <p class="note" id="unlock-line"></p>
+        </div>
+        </div>
+        <div class="stake-side">
+          <div class="scene" data-scene="03-hibernate" data-eager="1"><div class="art"></div></div>
+          <div class="card side-card">
+            <div class="row"><span class="k">Den today</span><span class="badge" id="sample-badge" hidden>sample data</span></div>
+            <div class="row"><span>Staked</span><span class="v"><span id="side-pct">—</span> of supply</span></div>
+            <div class="row"><span>Stakers</span><span class="v" id="side-count">—</span></div>
+            <div class="row"><span>Unlocks</span><span class="v">Nov 1 2026, 00:00 UTC</span></div>
+          </div>
+          <div class="card side-card">
+            <div class="row"><span class="k">You</span></div>
+            <div class="row"><span>$UPTOBEAR in wallet</span><span class="v" id="you-balance">—</span></div>
+            <div class="row"><span>Staked (locked)</span><span class="v" id="you-locked">—</span></div>
+            <div class="row"><span>Your weight</span><span class="v" id="you-weight">—</span></div>
+            <div class="row"><span>Your share of total weight</span><span class="v" id="you-share">—</span></div>
+            <div class="row"><span>Your vote</span><span class="v" id="you-vote">—</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave to-cream"></div>
+    <section class="band cream" id="sleep">
+      <div class="wrap narrow">
+
+        <h2 style="margin:28px 0 12px">Your share of the basket today</h2>
+        <p class="note">Weight = amount × days left. Your vote and your share.</p>
+        <div class="card"><div id="you-basket" class="empty">Connect a wallet.</div></div>
+
+        <h2 style="margin:28px 0 12px">Vote</h2>
+        <div class="card" id="vote-card">
+          <p class="note">Paste the token you want the treasury to buy.</p>
+          <label for="target">Token address</label>
+          <input id="target" type="text" placeholder="0x…" autocomplete="off" spellcheck="false">
+          <div class="note" id="target-symbol"></div>
+          <div class="actions">
+            <button id="vote" type="button">Vote</button>
+          </div>
+          <div class="status" id="vote-status"></div>
+          <p class="error" id="vote-err" hidden></p>
+        </div>
+
+        <div id="withdraw-card" hidden>
+          <h2 style="margin:28px 0 12px">Wake your bear</h2>
+          <div class="card">
+            <p class="note">After Nov 1: get back exactly what you locked.</p>
+            <div class="actions">
+              <button id="withdraw" type="button" disabled>Wake your bear</button>
+              <a href="./wake.html">Collect your basket</a>
+            </div>
+            <div class="status" id="withdraw-status"></div>
+            <p class="error" id="withdraw-err" hidden></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fine"></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js" integrity="sha512-V3xRGsQMQ8CG4l2gVN44TCDmNY5cdlxbSvejrgmWxcLKHft0Q3XQDbeuJ9aot14mpNuRWGtI//WKraedDGNZ+g==" crossorigin="anonymous"></script>
+  <script src="./config.js?v=20261001a"></script>
+  <script src="./abi.js?v=20261001a"></script>
+  <script src="./js/common.js?v=20261001a"></script>
+  <script src="./js/motion.js?v=20261001a"></script>
+  <script src="./js/wallet.js?v=20261001a"></script>
+  <script src="./js/den.js?v=20261001a"></script>
+</body>
+</html>

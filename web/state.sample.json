@@ -1,0 +1,251 @@
+{
+  "updatedAt": 1791234000,
+  "block": 58910022,
+  "blockTime": 1791233990,
+  "chainId": 4663,
+  "token": "0x1111111111111111111111111111111111111111",
+  "den": "0x2222222222222222222222222222222222222222",
+  "operator": "0x0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e",
+  "unlockAt": 1793491200,
+  "totalSupply": "1000000000000000000000000000",
+  "totalLocked": "231500000000000000000000000",
+  "hibernatingPct": 23.15,
+  "hibernators": 412,
+  "totalWeight": "561250000000000000000000000000000",
+  "live": {
+    "top": [
+      {
+        "token": "0x1111111111111111111111111111111111111111",
+        "symbol": "UPTOBEAR",
+        "weight": "173987500000000000000000000000000",
+        "pct": 31.0,
+        "logo": ""
+      },
+      {
+        "token": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+        "symbol": "WETH",
+        "weight": "129087500000000000000000000000000",
+        "pct": 23.0,
+        "logo": "logos/sample-1.png"
+      },
+      {
+        "token": "0x4444444444444444444444444444444444444444",
+        "symbol": "FROG",
+        "weight": "84187500000000000000000000000000",
+        "pct": 15.0,
+        "logo": "logos/sample-2.png"
+      },
+      {
+        "token": "0x5555555555555555555555555555555555555555",
+        "symbol": "NVDAx",
+        "weight": "56125000000000000000000000000000",
+        "pct": 10.0,
+        "logo": ""
+      },
+      {
+        "token": "0x6666666666666666666666666666666666666666",
+        "symbol": "USDG",
+        "weight": "39287500000000000000000000000000",
+        "pct": 7.0,
+        "logo": ""
+      },
+      {
+        "token": "0x7777777777777777777777777777777777777777",
+        "symbol": "CAT",
+        "weight": "28062500000000000000000000000000",
+        "pct": 5.0,
+        "logo": ""
+      },
+      {
+        "token": "0x8888888888888888888888888888888888888888",
+        "symbol": "TSLAx",
+        "weight": "22450000000000000000000000000000",
+        "pct": 4.0,
+        "logo": ""
+      },
+      {
+        "token": "0x9999999999999999999999999999999999999999",
+        "symbol": "PUNCH",
+        "weight": "11225000000000000000000000000000",
+        "pct": 2.0,
+        "logo": ""
+      },
+      {
+        "token": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "symbol": "0xaaaa…aaaa",
+        "weight": "11225000000000000000000000000000",
+        "pct": 2.0,
+        "logo": ""
+      },
+      {
+        "token": "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "symbol": "MOON",
+        "weight": "5612500000000000000000000000000",
+        "pct": 1.0,
+        "logo": ""
+      }
+    ]
+  },
+  "days": [
+    {
+      "day": "2026-10-05",
+      "closed": false,
+      "tallyBlock": 58910022,
+      "top3": [
+        {
+          "token": "0x1111111111111111111111111111111111111111",
+          "symbol": "UPTOBEAR",
+          "weight": "173987500000000000000000000000000",
+          "pct": 31.0,
+          "slicePct": 50,
+          "logo": ""
+        },
+        {
+          "token": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+          "symbol": "WETH",
+          "weight": "129087500000000000000000000000000",
+          "pct": 23.0,
+          "slicePct": 30,
+          "logo": "logos/sample-1.png"
+        },
+        {
+          "token": "0x4444444444444444444444444444444444444444",
+          "symbol": "FROG",
+          "weight": "84187500000000000000000000000000",
+          "pct": 15.0,
+          "slicePct": 20,
+          "logo": "logos/sample-2.png"
+        }
+      ],
+      "releases": [],
+      "release": null,
+      "releasedWei": "0",
+      "returns": []
+    },
+    {
+      "day": "2026-10-04",
+      "closed": true,
+      "tallyBlock": 58842000,
+      "top3": [
+        {
+          "token": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+          "symbol": "WETH",
+          "weight": "120000000000000000000000000000000",
+          "pct": 28.4,
+          "slicePct": 50,
+          "logo": "logos/sample-1.png"
+        },
+        {
+          "token": "0x1111111111111111111111111111111111111111",
+          "symbol": "UPTOBEAR",
+          "weight": "101000000000000000000000000000000",
+          "pct": 23.9,
+          "slicePct": 30,
+          "logo": ""
+        },
+        {
+          "token": "0x5555555555555555555555555555555555555555",
+          "symbol": "NVDAx",
+          "weight": "60000000000000000000000000000000",
+          "pct": 14.2,
+          "slicePct": 20,
+          "logo": ""
+        }
+      ],
+      "releases": [
+        {
+          "tx": "0xab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12",
+          "block": 58860110,
+          "amountWei": "1842000000000000000"
+        }
+      ],
+      "release": {
+        "tx": "0xab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12",
+        "block": 58860110,
+        "amountWei": "1842000000000000000"
+      },
+      "releasedWei": "1842000000000000000",
+      "returns": [
+        {
+          "token": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+          "symbol": "WETH",
+          "decimals": 18,
+          "amount": "921000000000000000",
+          "from": "0x0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e",
+          "fromOperator": true,
+          "tx": "0xcd34cd34cd34cd34cd34cd34cd34cd34cd34cd34cd34cd34cd34cd34cd34cd34",
+          "block": 58860120
+        },
+        {
+          "token": "0x1111111111111111111111111111111111111111",
+          "symbol": "UPTOBEAR",
+          "decimals": 18,
+          "amount": "12480000000000000000000000",
+          "from": "0x0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e",
+          "fromOperator": true,
+          "tx": "0xef56ef56ef56ef56ef56ef56ef56ef56ef56ef56ef56ef56ef56ef56ef56ef56",
+          "block": 58860300
+        },
+        {
+          "token": "0x5555555555555555555555555555555555555555",
+          "symbol": "NVDAx",
+          "decimals": 18,
+          "amount": "1120000000000000000",
+          "from": "0x0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e",
+          "fromOperator": true,
+          "tx": "0x0178017801780178017801780178017801780178017801780178017801780178",
+          "block": 58860410
+        }
+      ]
+    }
+  ],
+  "latestRelease": {
+    "tx": "0xab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12ab12",
+    "block": 58860110,
+    "amountWei": "1842000000000000000"
+  },
+  "sweeps": [
+    {
+      "token": "0x7777777777777777777777777777777777777777",
+      "symbol": "CAT",
+      "decimals": 18,
+      "amount": "500000000000000000000",
+      "tx": "0xb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1",
+      "block": 58862000
+    }
+  ],
+  "treasury": {
+    "balanceWei": "1215000000000000000",
+    "ownerOwed": "0",
+    "basket": [
+      {
+        "token": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+        "symbol": "WETH",
+        "decimals": 18,
+        "held": "921000000000000000",
+        "distributed": "0",
+        "logo": "logos/sample-1.png"
+      },
+      {
+        "token": "0x1111111111111111111111111111111111111111",
+        "symbol": "UPTOBEAR",
+        "decimals": 18,
+        "held": "12480000000000000000000000",
+        "distributed": "0",
+        "logo": ""
+      },
+      {
+        "token": "0x5555555555555555555555555555555555555555",
+        "symbol": "NVDAx",
+        "decimals": 18,
+        "held": "1120000000000000000",
+        "distributed": "0",
+        "logo": ""
+      }
+    ]
+  },
+  "fees": {
+    "claimedTotalWei": "6114000000000000000",
+    "ownerPaidWei": "3057000000000000000"
+  }
+}

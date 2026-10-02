@@ -1,0 +1,10 @@
+{
+ "rpc": "https://rpc.mainnet.chain.robinhood.com",
+ "den": "0x0000000000000000000000000000000000000000",
+ "treasury": "0x0000000000000000000000000000000000000000",
+ "den_block": 0,
+ "state_out": "web/state.json",
+ "db": "script/ops/indexer.db.json",
+ "logos_dir": "web/logos",
+ "abi_dir": "out"
+}
