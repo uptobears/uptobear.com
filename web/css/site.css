@@ -84,7 +84,7 @@ header.top nav a[aria-current="page"] { color: var(--ink); text-decoration: unde
 header.top nav a.x { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; margin-left: 6px; border-color: var(--ink); background: var(--cream); box-shadow: 0 3px 0 var(--ink); }
 header.top nav a.x:hover { background: var(--ink); color: var(--cream); transform: translateY(1px); box-shadow: 0 2px 0 var(--ink); }
 header.top nav a.x[hidden] { display: none; }
-@media (max-width: 420px) {
+@media (max-width: 560px) { /* compact header: the full brand + four links + X need ~525px (review measurement 2026-10-14) */
   header.top .brand > span:last-child { display: none; }
   header.top nav a { padding: 6px 8px; font-size: 0.9rem; white-space: nowrap; }
   header.top nav { gap: 0; }
