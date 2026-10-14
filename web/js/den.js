@@ -138,7 +138,7 @@ el("deposit").addEventListener("click", doDeposit);
 el("vote").addEventListener("click", doVote);
 el("withdraw").addEventListener("click", doWithdraw);
 el("target").addEventListener("input", onTargetInput);
-// stake.html?vote=<address> (the board's "Vote for this" pill) prefills the vote input.
+// stake?vote=<address> (the board's "Vote for this" pill) prefills the vote input.
 (function prefillVote() {
   const q = new URLSearchParams(location.search).get("vote");
   if (!q || !ethers.isAddress(q)) return;

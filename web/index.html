@@ -15,21 +15,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/site.css?v=20261014b">
+  <link rel="stylesheet" href="./css/site.css?v=20261014c">
 </head>
 <body>
   <a class="skip" href="#story">Skip to content</a>
   <header class="top">
     <div class="wrap">
-      <a class="brand" href="./index.html" aria-current="page">
+      <a class="brand" href="./" aria-current="page">
         <span class="avatar"><img src="./assets/gen/09-avatar.png" alt="" onerror="this.src='./assets/bear/bear_96_orange.png';this.onerror=null"></span>
         <span>UPTOBEAR</span>
       </a>
       <nav aria-label="Pages">
         <a href="#race" data-short="Vote"><span>Vote</span></a>
-        <a href="./stake.html">Stake</a>
-        <a href="./feedings.html">Buys</a>
-        <a href="./wake.html">Unlock</a>
+        <a href="./stake">Stake</a>
+        <a href="./feedings">Buys</a>
+        <a href="./wake">Unlock</a>
       </nav>
     </div>
   </header>
@@ -43,7 +43,7 @@
           <p class="lead"><a class="tease" href="#how">Stake. Vote. Collect.</a></p>
           <div class="cta">
             <a class="btn" data-buy hidden>Buy $UPTOBEAR</a>
-            <a class="btn" href="./stake.html">Stake $UPTOBEAR</a>
+            <a class="btn" href="./stake">Stake $UPTOBEAR</a>
             <a class="btn ghost" href="#race">Today's bulls</a>
           </div>
           <p class="error" id="err" hidden></p>
@@ -61,7 +61,7 @@
     <section class="band how" id="how" aria-label="How it works">
       <div class="wrap">
         <div class="board how-board reveal">
-          <div class="board-head"><div class="title"><span class="eyebrow">how it works</span><h2>Every token the treasury buys goes to stakers on Nov 1.</h2><p>Three steps to your share.</p></div></div>
+          <div class="board-head"><div class="title"><span class="eyebrow">how it works</span><h2>Stakers get every token the treasury buys.</h2></div></div>
           <ol class="cells">
             <li class="cell">
               <div class="rank" aria-hidden="true"><svg class="horns" viewBox="0 0 100 100" aria-hidden="true"><path d="M12 46 C-2 34 0 16 10 4 C15 18 26 30 34 45 Z" fill="#F3E2B8" stroke="#2a1a10" stroke-width="3.5" stroke-linejoin="round"/><path d="M88 46 C102 34 100 16 90 4 C85 18 74 30 66 45 Z" fill="#F3E2B8" stroke="#2a1a10" stroke-width="3.5" stroke-linejoin="round"/><path d="M14.7 41.5 A39 39 0 0 1 85.3 41.5 L74.5 46.6 A27 27 0 0 0 25.5 46.6 Z" fill="#D8322A" stroke="#2a1a10" stroke-width="3.5" stroke-linejoin="round"/><path d="M84 40 C90 42 94 48 93 54 C90 50 87 47 83 45 Z" fill="#D8322A" stroke="#2a1a10" stroke-width="3" stroke-linejoin="round"/></svg>1</div>
@@ -103,7 +103,7 @@
             <li class="cut" role="separator"><span>the cut · top 3 get bought</span></li>
             <li class="trow skel"></li><li class="trow skel"></li><li class="trow skel"></li><li class="trow skel"></li>
           </ol>
-          <p class="cta-row">Your token is not here? <a class="btn small" href="./stake.html#vote-card">Vote for any token</a></p>
+          <p class="cta-row">Your token is not here? <a class="btn small" href="./stake#vote-card">Vote for any token</a></p>
         </div>
       </div>
     </section>
@@ -125,7 +125,7 @@
           <p>Only staked bears share the basket.<br>Stake early, weigh more.</p>
           <div class="num big"><span id="hib-pct">—</span></div>
           <p class="note">of supply hibernating · <span id="hib-count">—</span> hibernators</p>
-          <a class="btn" href="./stake.html">Stake $UPTOBEAR</a>
+          <a class="btn" href="./stake">Stake $UPTOBEAR</a>
         </div>
       </div>
     </section>
@@ -154,7 +154,7 @@
           <p>Every day the treasury's ETH buys the top 3: 50/30/20.<br>The operator buys by hand. Every transaction is public.<br>Every token bought goes into the basket for stakers.</p>
           <div class="jars" id="jars"></div>
           <p class="note" style="margin-top:14px">releasable in the treasury: <strong id="releasable">—</strong> · <span id="last-feeding"></span></p>
-          <a class="btn" href="./feedings.html">Past feedings</a>
+          <a class="btn" href="./feedings">Past feedings</a>
         </div>
       </div>
     </section>
@@ -169,7 +169,7 @@
           <p>Every token bought in October, shared by weight.<br>Claim each token yourself.</p>
           <div class="clock" id="wake-in" style="margin:14px 0 6px">--:--:--</div>
           <p class="note">2026-11-01 00:00 UTC.</p>
-          <a class="btn" href="./wake.html">See the unlock</a>
+          <a class="btn" href="./wake">See the unlock</a>
         </div>
       </div>
     </section>
@@ -221,11 +221,11 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js" integrity="sha512-V3xRGsQMQ8CG4l2gVN44TCDmNY5cdlxbSvejrgmWxcLKHft0Q3XQDbeuJ9aot14mpNuRWGtI//WKraedDGNZ+g==" crossorigin="anonymous"></script>
-  <script src="./config.js?v=20261014b"></script>
-  <script src="./abi.js?v=20261014b"></script>
-  <script src="./js/common.js?v=20261014b"></script>
-  <script src="./js/wallet.js?v=20261014b"></script>
-  <script src="./js/motion.js?v=20261014b"></script>
-  <script src="./js/index.js?v=20261014b"></script>
+  <script src="./config.js?v=20261014c"></script>
+  <script src="./abi.js?v=20261014c"></script>
+  <script src="./js/common.js?v=20261014c"></script>
+  <script src="./js/wallet.js?v=20261014c"></script>
+  <script src="./js/motion.js?v=20261014c"></script>
+  <script src="./js/index.js?v=20261014c"></script>
 </body>
 </html>

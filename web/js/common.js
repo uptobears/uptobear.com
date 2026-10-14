@@ -1,6 +1,14 @@
 // Shared helpers: formatting (BigInt wei), state.json loading with sample fallback,
 // countdowns, the footer, and the MAY-CLAIM sentences (the only claims the site makes).
 
+// Clean URLs: the host serves /stake for stake.html, so a visitor who lands on /x.html sees /x in the bar.
+(function cleanPath() {
+  try {
+    const m = location.pathname.match(/^(.*\/)(index|stake|feedings|wake)\.html$/);
+    if (m && history.replaceState) history.replaceState(null, "", m[1] + (m[2] === "index" ? "" : m[2]) + location.search + location.hash);
+  } catch (e) {}
+})();
+
 const CLAIMS = {
   lock: "Hibernating locks $UPTOBEAR until 2026-11-01 00:00 UTC. No early exit. No admin exists on the Den.",
   weight: "Your weight = amount × time remaining at deposit. It is your vote power AND your share of the basket.",

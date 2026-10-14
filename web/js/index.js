@@ -15,7 +15,7 @@ function bullHtml(t, i, releasable) {
 }
 
 function voteHref(addr) {
-  return /^0x[0-9a-fA-F]{40}$/.test(addr) ? `./stake.html?vote=${addr}#vote-card` : "./stake.html#vote-card";
+  return /^0x[0-9a-fA-F]{40}$/.test(addr) ? `./stake?vote=${addr}#vote-card` : "./stake#vote-card";
 }
 
 // one row of the race table. Rows 1-3 are funded: they show what the treasury buys; the rest show only their votes.
@@ -45,7 +45,7 @@ function openRowHtml(i) {
     <span class="who"><span class="sym">Open spot</span><span class="hold">${SLICES[i]}% of the pot is waiting</span></span>
     <div class="bar"><div class="fill" style="width:0%"></div><span class="pct">0%</span></div>
     <span class="buys"><span class="k">the treasury buys</span><span class="amt">whatever wins</span></span>
-    <a class="vote" href="./stake.html#vote-card" data-vote="">Vote a token in</a>
+    <a class="vote" href="./stake#vote-card" data-vote="">Vote a token in</a>
   </li>`;
 }
 
@@ -230,7 +230,7 @@ function onVsInput() {
 document.addEventListener("click", (e) => {
   const a = e.target.closest("a[data-vote]");
   if (a) { e.preventDefault(); openVoteSheet(a.dataset.vote); return; }
-  const any = e.target.closest('a[href="./stake.html#vote-card"]');
+  const any = e.target.closest('a[href="./stake#vote-card"]');
   if (any && any.closest(".race-board")) { e.preventDefault(); openVoteSheet(null); return; }
   if (e.target.id === "vote-sheet") closeVoteSheet();
 });

@@ -88,6 +88,8 @@ the footer stamp (`[data-moo]`) wobbles it and pops a "MOO" bubble.
 
 ## Hosting
 
+Links are extensionless (`./stake`, `./feedings`, `./wake`, `./`); the host must serve `x.html` at `/x` (GitHub Pages does; for nginx use `try_files $uri $uri.html`). A `.html` landing is rewritten to the clean path by `cleanPath()` in `js/common.js`.
+
 Copy `web/` as-is to any static host (GitHub Pages, Cloudflare Pages, nginx, S3). Everything is relative
 (`./css/…`, `./js/…`, `./assets/…`, `./state.json`), so it works at a domain root or under a subpath. No server code.
 The pages use `fetch` for state.json, so they must be served over http(s), not opened as `file://`.
@@ -184,7 +186,7 @@ for f in js/*.js config.js abi.js; do node --check $f; done
 grep -rniE "nobody can withdraw|exact fees|NFT|guarantee|trustless|rug|\bsafe\b|audited" index.html stake.html feedings.html wake.html js/
    # the only hit must be the MAY-CLAIM `roll` sentence itself ("not a promise of one day's exact fees")
 python3 -c "import json; json.load(open('state.sample.json'))"
-python3 -m http.server 8765   # then open each page at 390×844, 768×1024, 1440×900, 1440×700, 1920×1080; the badge must read
+python3 script/ops/serve.py 8765   # Pages-like local server (/stake → stake.html); open each page at 390×844, 768×1024, 1440×900, 1440×700, 1920×1080; the badge must read
                               # "sample data" until state.json exists; scrollWidth must equal the viewport width; the hero
                               # bear, the scenes and the stickers must never be clipped
 ```
