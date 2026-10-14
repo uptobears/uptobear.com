@@ -17,6 +17,7 @@ const CONFIG = {
   SAMPLE_URL: "./state.sample.json",
   POLL_MS: 30000,
 
-  // Set true only after DEPLOY.md step 6 confirms exactly two SnipeTaxExempted events (Launcher, Treasury).
-  NO_EXEMPTIONS_VERIFIED: false,
+  // The one team wallet on the launch snipe-tax exemption list (owner decision 2026-10-14). Set only after DEPLOY.md
+  // step 6 confirms exactly three SnipeTaxExempted events (Launcher, Treasury, this wallet). "" = line not printed.
+  TEAM_WALLET: "",
 };

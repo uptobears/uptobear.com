@@ -103,7 +103,7 @@ The pages use `fetch` for state.json, so they must be served over http(s), not o
 | `TREASURY` | the Treasury address |
 | `UNLOCK_AT` | leave at `1793491200` (2026-11-01T00:00:00Z); must equal `den.UNLOCK()` |
 | `EXPLORER_URL` / `EXPLORER_TX_URL` | shipped as `""` (plain addresses and full hashes, no links). Fill only with a verified explorer base (`…` and `…/tx/`) |
-| `NO_EXEMPTIONS_VERIFIED` | set `true` only after DEPLOY.md step 6 shows exactly two SnipeTaxExempted events (Launcher, Treasury); this adds the "No launch-minute exemptions." line to the fine print |
+| `TEAM_WALLET` | the one team wallet on the launch exemption list; set only after DEPLOY.md step 6 shows exactly three SnipeTaxExempted events (Launcher, Treasury, this wallet); while empty the team-wallet line is not printed |
 
 Nothing else changes. If the ABIs change, regenerate `abi.js` from `out/Den.sol/Den.json` and
 `out/Treasury.sol/Treasury.json` (abi field only; the ERC-20 fragment at the bottom stays).

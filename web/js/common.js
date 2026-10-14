@@ -56,7 +56,7 @@ const CLAIMS = {
   fixed: "Operator and owner wallets are fixed at deploy and cannot be changed.",
   boundary: "The day boundary and the top 3 are reconstructed from public events; the contracts do not compute them.",
   withdraw: "Withdrawing at waking returns exactly what you deposited; the Den holds only $UPTOBEAR and can only ever send it back to you.",
-  exemptions: "No launch-minute exemptions.",
+  exemptions: "One team wallet was exempt from the launch snipe tax and bought once, at the launch block, tax-free; it holds those tokens; what they are used for is decided after launch and announced. No other address was exempt.",
   claims: "On waking, hibernators claim each basket token pro-rata by weight; late returns distribute too; a broken token cannot block the others; after a sweep, claims pay what remains and never more.",
   thirdParty: "Pons can redirect the creator stream with a 3-day timelock (factory owner power). Stock tokens are subject to the issuer's blocklist/pause/adminBurn powers.",
   roll: "If a target cannot be bought or returned (honeypot, venue down), its slice rolls into the next feeding and the post says so. The feeding amount is the release transaction's amount, not a promise of one day's exact fees.",
@@ -276,7 +276,7 @@ const FACTS = [
   [["fees"], "Every trade pays 3% (1% Pons, 2% creator tax). The creator stream splits in the contract: half to the treasury, half to operational costs."],
   [["feeding", "boundary"], "Every day the treasury's ETH buys the top 3 voted tokens (50/30/20) and the tokens come back to the basket. The top 3 is read from the public on-chain votes."],
   [["withdraw"], "At waking you get back exactly what you staked. The Den holds only $UPTOBEAR and can only ever send it back to you."],
-  [["exemptions"], "No launch-minute exemptions."],
+  [["exemptions"], "One team wallet was exempt from the launch snipe tax and bought once, at launch. It holds those tokens. What they are used for is decided after launch and announced. No other wallet was exempt. The wallet:"],
   [["claims"], "At waking, every staker claims every basket token pro-rata by weight. Late returns get shared too, one broken token never blocks the rest, and after a sweep claims pay what remains and never more."],
   [["roll", "thin"], "If a token can't be bought or returned safely that day, its slice rolls into the next feeding and the post says so. A feeding is the release transaction's amount."],
   [["gas"], "Anyone can trigger the fee claim. A vote or stake costs well under a cent in gas today."],
@@ -287,14 +287,16 @@ function renderFooter() {
   const rows = [["$UPTOBEAR", CONFIG.TOKEN], ["the Den (staking contract)", CONFIG.DEN], ["the treasury", CONFIG.TREASURY]]
     .map(([n, a]) => `<div class="addr"><span class="k">${n}</span> ${addrLink(a)}</div>`)
     .join("");
-  const facts = FACTS.filter(([keys]) => !keys.includes("exemptions") || CONFIG.NO_EXEMPTIONS_VERIFIED);
+  const facts = FACTS.filter(([keys]) => !keys.includes("exemptions") || CONFIG.TEAM_WALLET);
   const covered = new Set(facts.flatMap(([keys]) => keys));
   // Owner decision 2026-09-30: these CLAIMS are not printed in the footer. The sweep power still appears on the
   // Buys page ("Operator sweeps"). Listed here so the omission is explicit and the coverage guard stays strict.
   const OMITTED = ["operator", "fixed", "thirdParty", "weth", "after"];
   const missing = Object.keys(CLAIMS).filter((k) => k !== "exemptions" && !OMITTED.includes(k) && !covered.has(k));
   if (missing.length) throw new Error("footer facts are missing CLAIMS keys: " + missing.join(", "));
-  const how = facts.map(([, text]) => `<li>${esc(text)}</li>`).join("");
+  const how = facts
+    .map(([keys, text]) => `<li>${esc(text)}${keys.includes("exemptions") ? " " + addrLink(CONFIG.TEAM_WALLET) : ""}</li>`)
+    .join("");
   f.innerHTML = `<div class="wrap">
     <div class="addrs">${rows}</div>
     <div class="cols">
