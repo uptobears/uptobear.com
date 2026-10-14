@@ -357,17 +357,46 @@ legend { font-weight: 600; font-size: 0.95em; padding: 0; }
 }
 .board .rows .empty { padding: 18px 4px; }
 
-/* ---- how it works (home, under the hero) ---------------------------------- */
-.how .eyebrow { text-align: center; }
-.how .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.how .step { background: var(--paper); border: var(--stroke) solid var(--ink); border-radius: 22px; box-shadow: 0 6px 0 var(--ink); padding: 18px 18px 16px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: start; }
-.how .n { width: 44px; height: 44px; border-radius: 50%; background: var(--honey); border: var(--stroke) solid var(--ink); font: 700 1.35rem/40px var(--display); text-align: center; color: var(--ink); }
-.how h3 { font-size: 1.3rem; margin: 2px 0 4px; }
-.how .step p { margin: 0; font-weight: 500; }
-.how .step .note { margin-top: 4px; font-weight: 400; }
-.how .rule { margin: 18px 0 0; text-align: center; font-family: var(--display); font-weight: 700; font-size: clamp(1.1rem, 2vw, 1.4rem); }
-@media (max-width: 899px) { .how .steps { grid-template-columns: 1fr; } }
-
+/* ---- how it works (home, under the hero): one board that rhymes with the race board ---- */
+.hero .lead .tease { display: inline-block; color: var(--ink); font: 700 clamp(1.3rem, 2.2vw, 1.7rem)/1.1 var(--display); letter-spacing: 0.01em; text-decoration-thickness: 4px; text-underline-offset: 7px; text-decoration-color: var(--honey); }
+.hero .lead .tease:hover { text-decoration-color: var(--ink); }
+.how-board { padding: 22px 18px 50px; position: relative; }
+.how-board .board-head { justify-content: center; text-align: center; }
+.how .cells { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.how .cell { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 24px 16px 8px; }
+.how .cell + .cell { border-left: 2px dashed var(--line); }
+.how .cell .rank { position: relative; font: 700 2.4rem/1 var(--display); color: var(--orange); -webkit-text-stroke: 1.5px var(--ink); paint-order: stroke fill; padding-top: 28px; }
+.how .cell .rank svg { position: absolute; left: 50%; top: -6px; width: 58px; height: 58px; max-width: none; transform: translateX(-50%); overflow: visible; }
+@media (min-width: 900px) { .how .cell .rank { font-size: 3.1rem; -webkit-text-stroke: 2px var(--ink); padding-top: 30px; min-width: 96px; } .how .cell .rank svg { width: 66px; height: 66px; top: -2px; } }
+.how .cell .art { width: 190px; height: 190px; display: grid; place-items: center; transform: rotate(var(--tilt, 0deg)); }
+.how .cell .art img { width: 100%; height: 100%; object-fit: contain; filter: var(--drop); cursor: pointer; transition: transform 0.2s ease; }
+.how .cell .art img:hover { transform: scale(1.05); }
+.how .cell h3 { font-size: 1.75rem; line-height: 1; margin: 8px 0 0; }
+.how .cell .txt { display: grid; gap: 4px; justify-items: center; }
+.how .cell p { margin: 0; font-weight: 600; font-size: 1.08rem; max-width: 24ch; }
+.how .cell .note { font-weight: 400; font-size: 1rem; color: var(--ink-soft); max-width: 28ch; }
+.how .tagrow { position: absolute; left: 0; right: 0; bottom: -31px; display: flex; justify-content: center; }
+.how .nametag { background: var(--paper); border: var(--stroke) solid var(--ink); border-radius: 10px; box-shadow: 0 5px 0 var(--ink); padding: 12px 22px; font: 700 clamp(1.15rem, 2.4vw, 1.55rem)/1 var(--display); color: var(--ink); text-transform: uppercase; letter-spacing: 0.04em; transform: rotate(-2.5deg); white-space: nowrap; }
+.how .how-sub { text-align: center; margin: 52px 0 0; color: var(--ink); }
+@media (max-width: 899px) {
+  .how .cells { grid-template-columns: 1fr; }
+  .how .cell { display: grid; grid-template-columns: 38px 96px minmax(0, 1fr); grid-template-areas: "rank art h3" "txt txt txt"; align-items: center; column-gap: 12px; row-gap: 8px; text-align: left; padding: 14px 4px 16px; }
+  .how .cell + .cell { border-left: 0; border-top: 2px dashed var(--line); }
+  .how .cell .rank { grid-area: rank; font-size: 1.9rem; padding-top: 22px; text-align: center; }
+  .how .cell .rank svg { width: 40px; height: 40px; top: -4px; }
+  .how .cell .art { grid-area: art; width: 96px; height: 96px; }
+  .how .cell h3 { grid-area: h3; font-size: 1.6rem; margin: 0; }
+  .how .cell .txt { grid-area: txt; justify-items: start; }
+  .how .cell p, .how .cell .note { max-width: none; font-size: 1.02rem; }
+  .how-board { padding: 18px 14px 46px; }
+  .how .nametag { white-space: normal; text-align: center; }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .how .cell { grid-template-columns: 38px 120px minmax(0, 1fr); grid-template-areas: "rank art h3" "rank art txt"; row-gap: 4px; align-items: center; column-gap: 18px; }
+  .how .cell h3 { align-self: end; }
+  .how .cell .txt { align-self: start; }
+  .how .cell .art { width: 120px; height: 120px; }
+}
 /* ---- scroll reveal ------------------------------------------------------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.in { opacity: 1; transform: none; }
