@@ -1,0 +1,5 @@
+{
+  "_comment": "lowercase token address -> https logo URL, for tokens without a Pons logo() getter. Fill before launch (WETH, USDG, stock tokens).",
+  "0x0bd7d308f8e1639fab988df18a8011f41eacad73": "",
+  "0x5fc5360d0400a0fd4f2af552add042d716f1d168": ""
+}

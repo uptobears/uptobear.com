@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unlock</title>
+  <meta name="description" content="Waking: claim each basket token. Your share = your weight.">
+  <meta property="og:title" content="UPTOBEAR — waking">
+  <meta property="og:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <meta property="og:url" content="https://uptobear.com/wake.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <link rel="icon" href="./assets/gen/09-avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/site.css?v=20261001a">
+</head>
+<body>
+  <a class="skip" href="#basket">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./index.html">
+        <span class="avatar"><img src="./assets/gen/09-avatar.png" alt="" onerror="this.src='./assets/bear/bear_96_orange.png';this.onerror=null"></span>
+        <span>UPTOBEAR</span>
+      </a>
+      <nav aria-label="Pages">
+        <a href="./index.html#race" data-short="Vote"><span>Vote</span></a>
+        <a href="./stake.html">Stake</a>
+        <a href="./feedings.html">Buys</a>
+        <a href="./wake.html" aria-current="page">Unlock</a>
+      </nav>
+    </div>
+  </header>
+  <div class="wrap warn-wrap" id="stale-slot"></div>
+
+  <main>
+    <section class="band tight">
+      <div class="wrap page-head">
+        <div>
+          <h1>Rise and shine.<span class="badge" id="sample-badge" hidden>sample data</span></h1>
+          <p class="lead">Claim each basket token. Your share = your weight.</p>
+          <p class="error" id="err" hidden></p>
+        </div>
+        <div class="scene" data-scene="06-waking" data-eager="1"><div class="art"></div></div>
+      </div>
+    </section>
+
+    <div class="wave to-cream"></div>
+    <section class="band cream" id="basket">
+      <div class="wrap narrow">
+        <section id="before">
+          <span class="eyebrow">unlock in</span>
+          <div class="clock" id="wake-in">--:--:--</div>
+          <p class="note" style="margin-top:10px">Nov 1. Then every staker claims their share.</p>
+          <h2 style="margin:32px 0 12px">In the basket</h2>
+          <div class="basket-board" id="basket-preview"></div>
+        </section>
+
+        <section id="after" hidden>
+          <div class="card">
+            <div class="row"><span class="k">Wallet</span><span class="v" id="wallet-line">not connected</span></div>
+            <div class="actions">
+              <button id="connect" type="button">Connect wallet</button>
+              <button id="switch" type="button" class="secondary" hidden>Switch to Robinhood Chain</button>
+            </div>
+            <p class="error" id="wallet-err" hidden></p>
+          </div>
+
+          <h2 style="margin:28px 0 12px">Collect your basket</h2>
+          <div class="baskets" id="claims"><p class="empty">Connect a wallet.</p></div>
+          <p class="note" style="margin-top:12px">More can arrive later. Come back and claim again.</p>
+
+          <h2 style="margin:28px 0 12px">Wake your bear</h2>
+          <div class="card">
+            <p class="note">Get back exactly what you locked.</p>
+            <div class="row"><span>Hibernating (locked)</span><span class="v" id="you-locked">—</span></div>
+            <div class="actions"><button id="withdraw" type="button" disabled>Wake your bear</button></div>
+            <div class="status" id="withdraw-status"></div>
+            <p class="error" id="withdraw-err" hidden></p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fine"></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js" integrity="sha512-V3xRGsQMQ8CG4l2gVN44TCDmNY5cdlxbSvejrgmWxcLKHft0Q3XQDbeuJ9aot14mpNuRWGtI//WKraedDGNZ+g==" crossorigin="anonymous"></script>
+  <script src="./config.js?v=20261001a"></script>
+  <script src="./abi.js?v=20261001a"></script>
+  <script src="./js/common.js?v=20261001a"></script>
+  <script src="./js/motion.js?v=20261001a"></script>
+  <script src="./js/wallet.js?v=20261001a"></script>
+  <script src="./js/wake.js?v=20261001a"></script>
+</body>
+</html>

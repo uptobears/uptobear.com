@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buys</title>
+  <meta name="description" content="Every feeding: the day's top 3, the release transaction, the returns.">
+  <meta property="og:title" content="UPTOBEAR — feedings">
+  <meta property="og:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <meta property="og:url" content="https://uptobear.com/feedings.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://uptobear.com/assets/gen/11-og.png">
+  <link rel="icon" href="./assets/gen/09-avatar.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/site.css?v=20261001a">
+</head>
+<body>
+  <a class="skip" href="#menu">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="./index.html">
+        <span class="avatar"><img src="./assets/gen/09-avatar.png" alt="" onerror="this.src='./assets/bear/bear_96_orange.png';this.onerror=null"></span>
+        <span>UPTOBEAR</span>
+      </a>
+      <nav aria-label="Pages">
+        <a href="./index.html#race" data-short="Vote"><span>Vote</span></a>
+        <a href="./stake.html">Stake</a>
+        <a href="./feedings.html" aria-current="page">Buys</a>
+        <a href="./wake.html">Unlock</a>
+      </nav>
+    </div>
+  </header>
+  <div class="wrap warn-wrap" id="stale-slot"></div>
+
+  <main>
+    <section class="band tight">
+      <div class="wrap page-head">
+        <div>
+          <h1>Treasury buys.<span class="badge" id="sample-badge" hidden>sample data</span></h1>
+          <p class="lead">Every day, the top 3 voted tokens get bought.</p>
+          <div class="buys-hero" id="stats">
+            <div class="cell"><span class="eyebrow">spent buying tokens so far</span><div class="figure" id="st-eth">—</div></div>
+          </div>
+          <p class="error" id="err" hidden></p>
+        </div>
+        <div class="scene" data-scene="05-feeding" data-eager="1"><div class="art"></div></div>
+      </div>
+    </section>
+
+    <div class="wave to-cream"></div>
+    <section class="band cream" id="menu">
+      <div class="wrap">
+        <div class="menu" id="days"></div>
+
+        <h2 style="margin:40px 0 10px">Operator sweeps</h2>
+        <p class="note">The operator can move basket tokens out any time. Sweeps show here.</p>
+        <div class="card" id="sweeps"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fine"></footer>
+
+  <script src="./config.js?v=20261001a"></script>
+  <script src="./js/common.js?v=20261001a"></script>
+  <script src="./js/motion.js?v=20261001a"></script>
+  <script src="./js/feedings.js?v=20261001a"></script>
+</body>
+</html>
