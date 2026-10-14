@@ -327,7 +327,9 @@ function wireBuyLinks() {
 }
 // The X button (header) and the footer link show only when CONFIG.X_URL is set.
 function wireXLinks() {
-  if (!CONFIG.X_URL) return;
-  document.querySelectorAll("#x-link, .x-foot").forEach((a) => { a.href = CONFIG.X_URL; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; });
+  let url = String(CONFIG.X_URL || "").trim();
+  if (!url) return;
+  if (!/^https?:\/\//i.test(url)) url = "https://x.com/" + url.replace(/^@/, ""); // "@handle" or "handle" also work
+  document.querySelectorAll("#x-link, .x-foot").forEach((a) => { a.href = url; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; });
 }
 document.addEventListener("DOMContentLoaded", () => { renderSayings(); renderFooter(); wireBuyLinks(); wireXLinks(); });

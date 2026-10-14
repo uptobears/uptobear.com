@@ -91,6 +91,7 @@ header.top nav a.x[hidden] { display: none; }
   header.top nav a[data-short]::before { content: attr(data-short); }
   header.top nav a[data-short] span { display: none; }
   header.top nav a.x { width: 32px; height: 32px; margin-left: 4px; }
+  footer.fine .tag .x-foot { margin-left: 0; margin-top: 8px; }
 }
 
 /* ---- bands + wavy dividers ---------------------------------------------- */
