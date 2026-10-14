@@ -56,7 +56,7 @@ const CLAIMS = {
   fixed: "Operator and owner wallets are fixed at deploy and cannot be changed.",
   boundary: "The day boundary and the top 3 are reconstructed from public events; the contracts do not compute them.",
   withdraw: "Withdrawing at waking returns exactly what you deposited; the Den holds only $UPTOBEAR and can only ever send it back to you.",
-  exemptions: "One team wallet was exempt from the launch snipe tax and bought once, at the launch block, tax-free; it holds those tokens; what they are used for is decided after launch and announced. No other address was exempt.",
+  exemptions: "One team wallet was exempt from the launch snipe tax and bought once, inside the launch transaction, tax-free; it holds those tokens; what they are used for is decided after launch and announced. No other address was exempt.",
   claims: "On waking, hibernators claim each basket token pro-rata by weight; late returns distribute too; a broken token cannot block the others; after a sweep, claims pay what remains and never more.",
   thirdParty: "Pons can redirect the creator stream with a 3-day timelock (factory owner power). Stock tokens are subject to the issuer's blocklist/pause/adminBurn powers.",
   roll: "If a target cannot be bought or returned (honeypot, venue down), its slice rolls into the next feeding and the post says so. The feeding amount is the release transaction's amount, not a promise of one day's exact fees.",
