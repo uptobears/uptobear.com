@@ -13,6 +13,7 @@ const CONFIG = {
 
   UNLOCK_AT: 1793491200,          // 2026-11-01T00:00:00Z (waking)
   BUY_URL: "",                    // where to buy $UPTOBEAR (the Pons trade page for the token); filled at launch, buttons stay hidden while empty
+  X_URL: "",                      // the project's X account (https://x.com/<handle>); the X button stays hidden while empty
   STATE_URL: "./state.json",      // written by the indexer every 60 s
   SAMPLE_URL: "./state.sample.json",
   POLL_MS: 30000,

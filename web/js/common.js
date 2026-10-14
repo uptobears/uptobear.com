@@ -306,7 +306,7 @@ function renderFooter() {
           <summary><h2>The bear facts</h2><span class="sub">What the contracts do for you, straight from the code.</span></summary>
           <ol class="how">${how}</ol>
         </details>
-        <p class="tag">In October, every bear is a bull.</p>
+        <p class="tag">In October, every bear is a bull. <a class="x-foot" hidden>Follow on X</a></p>
       </div>
     </div>
   </div>`;
@@ -325,4 +325,9 @@ function wireBuyLinks() {
     a.href = CONFIG.BUY_URL; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; if (holder && holder.classList.contains("buy-note")) holder.hidden = false;
   });
 }
-document.addEventListener("DOMContentLoaded", () => { renderSayings(); renderFooter(); wireBuyLinks(); });
+// The X button (header) and the footer link show only when CONFIG.X_URL is set.
+function wireXLinks() {
+  if (!CONFIG.X_URL) return;
+  document.querySelectorAll("#x-link, .x-foot").forEach((a) => { a.href = CONFIG.X_URL; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; });
+}
+document.addEventListener("DOMContentLoaded", () => { renderSayings(); renderFooter(); wireBuyLinks(); wireXLinks(); });

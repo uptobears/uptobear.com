@@ -81,12 +81,16 @@ header.top nav a { text-decoration: none; font-family: var(--display); font-weig
 header.top nav a:hover { border-color: var(--ink); background: var(--sand-deep); }
 /* the current page: ink text with an ink underline */
 header.top nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink); text-decoration-thickness: 3px; text-underline-offset: 5px; }
+header.top nav a.x { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; margin-left: 6px; border-color: var(--ink); background: var(--cream); box-shadow: 0 3px 0 var(--ink); }
+header.top nav a.x:hover { background: var(--ink); color: var(--cream); transform: translateY(1px); box-shadow: 0 2px 0 var(--ink); }
+header.top nav a.x[hidden] { display: none; }
 @media (max-width: 420px) {
   header.top .brand > span:last-child { display: none; }
   header.top nav a { padding: 6px 8px; font-size: 0.9rem; white-space: nowrap; }
   header.top nav { gap: 0; }
   header.top nav a[data-short]::before { content: attr(data-short); }
   header.top nav a[data-short] span { display: none; }
+  header.top nav a.x { width: 32px; height: 32px; margin-left: 4px; }
 }
 
 /* ---- bands + wavy dividers ---------------------------------------------- */
@@ -486,6 +490,9 @@ footer.fine ol.how { padding-left: 22px; margin: 0 0 24px; max-width: 78ch; }
 footer.fine ol.how li { margin: 10px 0; padding-left: 4px; }
 footer.fine ol.how li::marker { font-family: var(--display); font-weight: 700; color: var(--ink); }
 footer.fine .tag { font-family: var(--display); font-weight: 700; font-size: 1.4rem; margin-top: 24px; }
+footer.fine .tag .x-foot { display: inline-block; font-size: 1rem; font-weight: 600; margin-left: 12px; padding: 5px 12px; border-radius: 999px; border: var(--stroke) solid var(--ink); background: var(--cream); color: var(--ink); text-decoration: none; box-shadow: 0 3px 0 var(--ink); vertical-align: middle; }
+footer.fine .tag .x-foot:hover { background: var(--ink); color: var(--cream); }
+footer.fine .tag .x-foot[hidden] { display: none; }
 footer.fine .stamp { display: flex; align-items: center; gap: 12px; }
 footer.fine .stamp img { width: 48px; height: 48px; flex: none; border-radius: 50%; border: var(--stroke) solid var(--ink); object-fit: cover; cursor: pointer; }
 footer.fine .stamp { margin-bottom: 28px; }
