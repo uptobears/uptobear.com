@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UPTOBEAR</title>
-  <meta name="description" content="In October, every bear is a bull. $UPTOBEAR: hibernate, vote, feed the top 3 every day, claim the basket on waking.">
+  <meta name="description" content="In October, every bear is a bull. Stake $UPTOBEAR, vote for a token every day, the treasury buys the top 3. On Nov 1 stakers split the basket it bought.">
   <meta property="og:title" content="UPTOBEAR">
   <meta property="og:description" content="In October, every bear is a bull.">
   <meta property="og:image" content="https://uptobear.com/assets/gen/11-og.png">
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/site.css?v=20261001a">
+  <link rel="stylesheet" href="./css/site.css?v=20261014a">
 </head>
 <body>
   <a class="skip" href="#story">Skip to content</a>
@@ -40,7 +40,7 @@
       <div class="wrap grid">
         <div class="copy">
           <h1>In October, every bear is a bull.</h1>
-          <p class="lead">Pick a token every day.<br>Our treasury buys the winners.</p>
+          <p class="lead">Stake $UPTOBEAR. Vote every day.<br>Every day the treasury buys the top 3.<br>On Nov 1, stakers split the basket it bought.</p>
           <div class="cta">
             <a class="btn" data-buy hidden>Buy $UPTOBEAR</a>
             <a class="btn" href="./stake.html">Stake $UPTOBEAR</a>
@@ -58,6 +58,17 @@
         </div>
       </div>
     </section>
+    <section class="band how" id="how" aria-label="How it works">
+      <div class="wrap">
+        <span class="eyebrow">how it works</span>
+        <ol class="steps reveal">
+          <li class="step"><span class="n">1</span><div><h3>Stake</h3><p>Lock $UPTOBEAR until Nov 1.</p><p class="note">Only staked bears get a share.</p></div></li>
+          <li class="step"><span class="n">2</span><div><h3>Vote</h3><p>Pick any token, every day.</p><p class="note">At 00:00 UTC the top 3 get bought.</p></div></li>
+          <li class="step"><span class="n">3</span><div><h3>Collect</h3><p>Nov 1: claim your share of every token bought.</p><p class="note">Your share = your weight. Stake early, weigh more.</p></div></li>
+        </ol>
+        <p class="rule">Not staked = no share.<br>Staked early = bigger share.</p>
+      </div>
+    </section>
     <section class="band race" id="race" aria-label="The race">
       <div class="wrap">
         <div class="board race-board reveal">
@@ -65,7 +76,7 @@
             <div class="title">
               <span class="eyebrow">the race</span>
               <h2>Today's race</h2>
-              <p>Vote for any token. At 00:00 UTC the treasury buys the top 3.<br>Bought tokens are staked until Nov 1.</p>
+              <p>Vote for any token. At 00:00 UTC the treasury buys the top 3.<br>Bought tokens are staked until Nov 1.<br>Stakers split the basket on Nov 1.</p>
             </div>
             <div class="stats">
               <div class="stat"><span class="eyebrow">on the table today</span><div class="num" id="race-pot">—</div><span class="sub">buys the top 3 · 50 / 30 / 20</span></div>
@@ -95,7 +106,8 @@
         <div class="txt">
           <span class="eyebrow">hibernate</span>
           <h2>Bears sleep. Bulls wake up.</h2>
-          <p>Locked until Nov 1. No early exit. No admin.</p>
+          <p>Hibernating = staking. Locked until Nov 1.<br>No early exit. No admin.</p>
+          <p>Only staked bears share the basket.<br>Stake early, weigh more.</p>
           <div class="num big"><span id="hib-pct">—</span></div>
           <p class="note">of supply hibernating · <span id="hib-count">—</span> hibernators</p>
           <a class="btn" href="./stake.html">Stake $UPTOBEAR</a>
@@ -124,7 +136,7 @@
         <div class="txt">
           <span class="eyebrow">feeding</span>
           <h2>Three jars, every day.</h2>
-          <p>Every day the treasury's ETH buys the top 3: 50/30/20.<br>The operator buys by hand. Every transaction is public.</p>
+          <p>Every day the treasury's ETH buys the top 3: 50/30/20.<br>The operator buys by hand. Every transaction is public.<br>Every token bought goes into the basket for stakers.</p>
           <div class="jars" id="jars"></div>
           <p class="note" style="margin-top:14px">releasable in the treasury: <strong id="releasable">—</strong> · <span id="last-feeding"></span></p>
           <a class="btn" href="./feedings.html">Past feedings</a>
@@ -138,8 +150,8 @@
         <div class="scene" data-scene="06-waking"><div class="art"></div></div>
         <div class="txt">
           <span class="eyebrow">waking</span>
-          <h2>Nov 1. Hibernators get the basket.</h2>
-          <p>Nov 1: the basket is split by weight. Claim each token yourself.</p>
+          <h2>Nov 1. Stakers split the basket.</h2>
+          <p>Every token bought in October, shared by weight.<br>Claim each token yourself.</p>
           <div class="clock" id="wake-in" style="margin:14px 0 6px">--:--:--</div>
           <p class="note">2026-11-01 00:00 UTC.</p>
           <a class="btn" href="./wake.html">See the unlock</a>
@@ -194,11 +206,11 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js" integrity="sha512-V3xRGsQMQ8CG4l2gVN44TCDmNY5cdlxbSvejrgmWxcLKHft0Q3XQDbeuJ9aot14mpNuRWGtI//WKraedDGNZ+g==" crossorigin="anonymous"></script>
-  <script src="./config.js?v=20261001a"></script>
-  <script src="./abi.js?v=20261001a"></script>
-  <script src="./js/common.js?v=20261001a"></script>
-  <script src="./js/wallet.js?v=20261001a"></script>
-  <script src="./js/motion.js?v=20261001a"></script>
-  <script src="./js/index.js?v=20261001a"></script>
+  <script src="./config.js?v=20261014a"></script>
+  <script src="./abi.js?v=20261014a"></script>
+  <script src="./js/common.js?v=20261014a"></script>
+  <script src="./js/wallet.js?v=20261014a"></script>
+  <script src="./js/motion.js?v=20261014a"></script>
+  <script src="./js/index.js?v=20261014a"></script>
 </body>
 </html>

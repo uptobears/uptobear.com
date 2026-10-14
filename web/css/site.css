@@ -357,12 +357,23 @@ legend { font-weight: 600; font-size: 0.95em; padding: 0; }
 }
 .board .rows .empty { padding: 18px 4px; }
 
+/* ---- how it works (home, under the hero) ---------------------------------- */
+.how .eyebrow { text-align: center; }
+.how .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.how .step { background: var(--paper); border: var(--stroke) solid var(--ink); border-radius: 22px; box-shadow: 0 6px 0 var(--ink); padding: 18px 18px 16px; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: start; }
+.how .n { width: 44px; height: 44px; border-radius: 50%; background: var(--honey); border: var(--stroke) solid var(--ink); font: 700 1.35rem/40px var(--display); text-align: center; color: var(--ink); }
+.how h3 { font-size: 1.3rem; margin: 2px 0 4px; }
+.how .step p { margin: 0; font-weight: 500; }
+.how .step .note { margin-top: 4px; font-weight: 400; }
+.how .rule { margin: 18px 0 0; text-align: center; font-family: var(--display); font-weight: 700; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+@media (max-width: 899px) { .how .steps { grid-template-columns: 1fr; } }
+
 /* ---- scroll reveal ------------------------------------------------------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .reveal.in { opacity: 1; transform: none; }
 
 /* ---- page heads (den / feedings / wake) ---------------------------------- */
-.page-head { display: grid; gap: 20px; align-items: center; padding: 28px 0 32px; }
+.page-head { display: grid; gap: 20px; align-items: center; padding-top: 28px; padding-bottom: 32px; }
 .page-head h1 { font-size: clamp(2.8rem, 8vw, 5.4rem); line-height: 0.95; }
 .page-head .lead { margin-top: 14px; }
 .page-head .scene .art { width: min(100%, 440px); }
@@ -545,7 +556,7 @@ body.noscroll { overflow: hidden; }
 .trow .mine-pill { background: var(--honey); color: var(--ink); border-color: var(--ink); font-size: 0.65rem; width: max-content; }
 
 /* stake page: the form lives in the hero so nobody scrolls to stake */
-.page-head.stake { padding: 20px 0 28px; }
+.page-head.stake { padding-top: 20px; padding-bottom: 28px; }
 .page-head.stake .stake-col { min-width: 0; }
 .page-head.stake .stake-col .card { margin-top: 14px; }
 .page-head.stake .buy-note { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0 4px; color: var(--ink); }
