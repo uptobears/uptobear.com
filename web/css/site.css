@@ -162,6 +162,7 @@ input[type="text"], input[type="number"] {
   min-height: 52px;
 }
 input:focus, button:focus-visible, .btn:focus-visible, a:focus-visible { outline: 3px solid var(--honey); outline-offset: 2px; }
+[tabindex="-1"]:focus { outline: none; } /* anchor targets focused by cleanHash(): the scroll is the indication */
 fieldset { border: 0; padding: 0; margin: 4px 0 0; }
 legend { font-weight: 600; font-size: 0.95em; padding: 0; }
 .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; align-items: center; }

@@ -8,6 +8,43 @@
     if (m && history.replaceState) history.replaceState(null, "", m[1] + (m[2] === "index" ? "" : m[2]) + location.search + location.hash);
   } catch (e) {}
 })();
+// No "#section" in the bar either: in-page anchor links scroll to their target and the hash is dropped;
+// a landing with a hash (./#race from another page) scrolls once, then the hash is dropped the same way.
+(function cleanHash() {
+  const strip = () => { try { if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search); } catch (e) {} };
+  const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Keyboard users: move the focus start point to the target (native hash navigation does this; scrollIntoView does not).
+  const focusTarget = (t) => { if (!t.hasAttribute("tabindex")) t.setAttribute("tabindex", "-1"); t.focus({ preventScroll: true }); };
+  document.addEventListener("click", (e) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // let "open in new tab" etc. through
+    const a = e.target.closest("a[href]");
+    if (!a || e.defaultPrevented) return;
+    const m = (a.getAttribute("href") || "").match(/^(?:\.\/)?#([A-Za-z][\w-]*)$/);
+    if (!m) return;
+    const t = document.getElementById(m[1]);
+    if (!t) return;
+    e.preventDefault();
+    t.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    focusTarget(t);
+    strip();
+  });
+  // Strip the hash before load so the browser never runs its own fragment scroll (it keeps nudging the page by a
+  // variable 8–23 px after ours); remember it and scroll once ourselves. This script runs before the load event.
+  let pending = location.hash.slice(1);
+  if (pending) strip();
+  const landing = () => {
+    const fromLoad = !!pending;
+    const id = pending || location.hash.slice(1); pending = "";
+    const t = id && document.getElementById(id);
+    // load: we stripped the hash first, nothing else scrolls, so jump straight onto the section ("instant" overrides the
+    // page's smooth scroll-behavior). hashchange: the browser is already smooth-scrolling there, match it instead of fighting it.
+    const behavior = fromLoad ? "instant" : (reduced ? "auto" : "smooth");
+    if (t) setTimeout(() => { t.scrollIntoView({ behavior, block: "start" }); focusTarget(t); strip(); }, 60);
+    else if (location.hash) strip();
+  };
+  window.addEventListener("load", landing);
+  window.addEventListener("hashchange", landing);
+})();
 
 const CLAIMS = {
   lock: "Hibernating locks $UPTOBEAR until 2026-11-01 00:00 UTC. No early exit. No admin exists on the Den.",
