@@ -91,7 +91,6 @@ header.top nav a.x[hidden] { display: none; }
   header.top nav a[data-short]::before { content: attr(data-short); }
   header.top nav a[data-short] span { display: none; }
   header.top nav a.x { width: 32px; height: 32px; margin-left: 4px; }
-  footer.fine .tag .x-foot { margin-left: 0; margin-top: 8px; }
 }
 
 /* ---- bands + wavy dividers ---------------------------------------------- */
@@ -491,7 +490,8 @@ footer.fine ol.how { padding-left: 22px; margin: 0 0 24px; max-width: 78ch; }
 footer.fine ol.how li { margin: 10px 0; padding-left: 4px; }
 footer.fine ol.how li::marker { font-family: var(--display); font-weight: 700; color: var(--ink); }
 footer.fine .tag { font-family: var(--display); font-weight: 700; font-size: 1.4rem; margin-top: 24px; }
-footer.fine .tag .x-foot { display: inline-block; font-size: 1rem; font-weight: 600; margin-left: 12px; padding: 5px 12px; border-radius: 999px; border: var(--stroke) solid var(--ink); background: var(--cream); color: var(--ink); text-decoration: none; box-shadow: 0 3px 0 var(--ink); vertical-align: middle; }
+footer.fine .tag:has(.x-foot:not([hidden])) { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; } /* the pill wraps flush left at any width */
+footer.fine .tag .x-foot { display: inline-block; font-size: 1rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: var(--stroke) solid var(--ink); background: var(--cream); color: var(--ink); text-decoration: none; box-shadow: 0 3px 0 var(--ink); vertical-align: middle; }
 footer.fine .tag .x-foot:hover { background: var(--ink); color: var(--cream); }
 footer.fine .tag .x-foot[hidden] { display: none; }
 footer.fine .stamp { display: flex; align-items: center; gap: 12px; }
