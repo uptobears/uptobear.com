@@ -5,7 +5,7 @@ const CONFIG = {
   CHAIN_NAME: "Robinhood Chain",
   RPC_URL: "https://rpc.mainnet.chain.robinhood.com",
   EXPLORER_URL: "",      // explorer base (…/address/<addr>); "" = plain addresses, no links
-  EXPLORER_TX_URL: "https://x.com/uptobears",   // tx URL prefix (…/tx/); "" = plain hashes, no links
+  EXPLORER_TX_URL: "",   // tx URL prefix (…/tx/); "" = plain hashes, no links
 
   TOKEN: "0x0000000000000000000000000000000000000000",     // $UPTOBEAR
   DEN: "0x0000000000000000000000000000000000000000",       // Den
